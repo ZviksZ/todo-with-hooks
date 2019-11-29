@@ -17,6 +17,7 @@ export const FirebaseState = ({children}) => {
    const showLoader = () => dispatch({type: SHOW_LOADER})
    
    const fetchNotes = async () => {
+      
       showLoader();
       const res = await axios.get(`${url}/notes.json`)
       
@@ -31,6 +32,7 @@ export const FirebaseState = ({children}) => {
    }
    
    const addNote = async title => {
+      
       const note = {
          title, 
          date: new Date().toJSON()
@@ -46,7 +48,8 @@ export const FirebaseState = ({children}) => {
          
       } catch (e) {
           throw new Error(e.message)
-      }   
+      }
+      
    }
    
    const removeNote = async id => {
