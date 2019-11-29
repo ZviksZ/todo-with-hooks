@@ -4,7 +4,6 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group'
 
 export const Notes = ({notes, onRemove}) => (
    <TransitionGroup component="ul" className="list-group">
-
       {notes.map(note => (
          <CSSTransition 
             key={note.id}
@@ -19,7 +18,8 @@ export const Notes = ({notes, onRemove}) => (
 
                <button onClick={() => onRemove(note.id)}
                        type="button"
-                       className="btn btn-outline-danger btn-sm">
+                       className="btn btn-outline-danger btn-sm"
+               >
                   &times;
                </button>
             </li>
